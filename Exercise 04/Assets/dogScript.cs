@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class dogScript : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class dogScript : MonoBehaviour
         gameObject.transform.Translate(transform.forward * forwardSpeed * Time.deltaTime, Space.World);
         //Timer
         timeR = 60 - Time.time;
-        timeCount.text = timeR;
+        timeCount.text = timeR.ToString();
 
         //victory condition
         if (ballsGotten == 7)
