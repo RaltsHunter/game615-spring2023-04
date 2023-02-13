@@ -7,6 +7,7 @@ public class dogScript : MonoBehaviour
 {
     //Players have 60 seconds to collect 7 tennis balls.
     public GameObject player;
+    public GameObject projectile;
     float forwardSpeed = 5f;
     float rotateSpeed = 100f;
     public float timeR = 60;
@@ -41,9 +42,23 @@ public class dogScript : MonoBehaviour
         {
             timeCount.text = "Game Over!";
         }
+        //Bullet launch
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            {
+               // GameObject.Find(player);
+                GameObject bullet = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                rb.AddForce(bullet.transform.forward * 1000);
+
+                //Destroy(projectile, 2f);
+            }
+
+        }
 
 
     }
+
     private void OnTriggerEnter(Collider other)
    {
         //hitting good things
@@ -63,4 +78,5 @@ public class dogScript : MonoBehaviour
             player.transform.rotation = Quaternion.identity;
        }
     }
+
    }
