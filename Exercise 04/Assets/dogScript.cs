@@ -38,9 +38,10 @@ public class dogScript : MonoBehaviour
             ballCount.text = "Victory!";
         }
         //lose condition
-        if (timeR == 0)
+        if (timeR <= 0)
         {
             timeCount.text = "Game Over!";
+            Destroy(player);
         }
         //Bullet launch
         if (Input.GetKeyDown(KeyCode.Space))
@@ -70,6 +71,7 @@ public class dogScript : MonoBehaviour
 
 
         }
+        
       //hitting bad things
      if (other.CompareTag("other"))
         {
