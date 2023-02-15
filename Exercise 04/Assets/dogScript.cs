@@ -10,7 +10,7 @@ public class dogScript : MonoBehaviour
     public GameObject projectile;
     float forwardSpeed = 5f;
     float rotateSpeed = 100f;
-    public float timeR = 60;
+    public float timeR = 45;
     public float ballsGotten = 0;
     public TMP_Text ballCount;
     public TMP_Text timeCount;
@@ -29,7 +29,7 @@ public class dogScript : MonoBehaviour
         gameObject.transform.Rotate(0, rotateSpeed * Time.deltaTime * hAxis, 0);
         gameObject.transform.Translate(transform.forward * forwardSpeed * Time.deltaTime, Space.World);
         //Timer
-        timeR = 60 - Time.time;
+        timeR = 45 - Time.time;
         timeCount.text = timeR.ToString();
 
         //victory condition
@@ -44,18 +44,18 @@ public class dogScript : MonoBehaviour
             Destroy(player);
         }
         //Bullet launch
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            {
+       // if (Input.GetKeyDown(KeyCode.Space))
+       // {
+        //    {
                // GameObject.Find(player);
-                GameObject bullet = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
-                Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                rb.AddForce(bullet.transform.forward * 1000);
+           //     GameObject bullet = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
+            //    Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            //    rb.AddForce(bullet.transform.forward * 1000);
 
                 //Destroy(projectile, 2f);
-            }
+       //     }
 
-        }
+      //  }
 
 
     }
